@@ -7,9 +7,14 @@ import {
 } from 'n8n-workflow';
 import { productDescription } from './resources/product';
 import { categoryDescription } from './resources/category';
+import { storeDescription } from './resources/store';
+import { hotsiteDescription } from './resources/hotsite';
 import { getAllPageProducts } from './operations/products/getAllPageProducts';
 import { getSinglePageProducts } from './operations/products/getSinglePageProducts';
 import { getAllCategories } from './operations/categories/getAllCategories';
+import { getStore } from './operations/store/getStore';
+import { getAllPageHotsites } from './operations/hotsites/getAllPageHotsites';
+import { getSinglePageHotsites } from './operations/hotsites/getSinglePageHotsites';
 
 export class WakeProducts implements INodeType {
 	description: INodeTypeDescription = {
@@ -53,14 +58,24 @@ export class WakeProducts implements INodeType {
 						value: 'category',
 					},
 					{
+						name: 'Hotsite',
+						value: 'hotsite',
+					},
+					{
 						name: 'Product',
 						value: 'product',
+					},
+					{
+						name: 'Store',
+						value: 'store',
 					},
 				],
 				default: 'product',
 			},
 			...categoryDescription,
+			...hotsiteDescription,
 			...productDescription,
+			...storeDescription,
 		],
 		usableAsTool: true,
 	};
@@ -73,6 +88,20 @@ export class WakeProducts implements INodeType {
 		// Handle category operations
 		if (resource === 'category' && operation === 'getAll') {
 			return await getAllCategories(this);
+		}
+
+		// Handle store operations
+		if (resource === 'store' && operation === 'get') {
+			return await getStore(this);
+		}
+
+		// Handle hotsite operations
+		if (resource === 'hotsite' && operation === 'getAllPageHotsites') {
+			return await getAllPageHotsites(this);
+		}
+
+		if (resource === 'hotsite' && operation === 'getSinglePageHotsites') {
+			return await getSinglePageHotsites(this);
 		}
 
 		// Handle custom operations with pagination logic
