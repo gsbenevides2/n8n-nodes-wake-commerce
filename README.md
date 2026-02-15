@@ -58,6 +58,22 @@ Supports filters:
 - **Only Children**: Return only child categories
 - **Active**: Filter by active/inactive status
 
+### Hotsites
+
+- **Get All Page Hotsites** - Get all hotsites with automatic pagination
+- **Get Single Page Hotsites** - Get hotsites with manual pagination control
+
+Both operations automatically fetch hotsite data including:
+
+- Hotsite information (hotsiteId, name, active status, template, URL)
+- Product lists and expressions
+- SEO metadata
+- Banners and content
+
+### Store
+
+- **Get** - Get basic store information (name, site URL, cart URL)
+
 ## Credentials
 
 You need a Wake Commerce API token to use this node.
@@ -109,12 +125,33 @@ The node will automatically fetch all products across all pages and return them 
 4. Configure filters if needed (optional)
 5. Execute the node
 
+### Example: Get All Hotsites
+
+1. Add the **Wake Products** node to your workflow
+2. Select **Resource**: Hotsite
+3. Select **Get All Page Hotsites** operation
+4. Set records per page (optional, default: 50)
+5. Execute the node
+
+The node will automatically fetch all hotsites across all pages.
+
+### Example: Get Store Information
+
+1. Add the **Wake Products** node to your workflow
+2. Select **Resource**: Store
+3. Select **Get** operation
+4. Execute the node
+
+Returns basic store information including name, site URL, and cart URL.
+
 ## Resources
 
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
 - [Wake Commerce API documentation](https://wakecommerce.readme.io/)
 - [Wake Commerce Products API reference](https://wakecommerce.readme.io/reference/retorna-todos-os-produtos)
 - [Wake Commerce Categories API reference](https://wakecommerce.readme.io/reference/retorna-todas-as-categorias)
+- [Wake Commerce Hotsites API reference](https://wakecommerce.readme.io/reference/busca-todos-os-hotsites-inseridos)
+- [Wake Commerce Store API reference](https://wakecommerce.readme.io/reference/retorna-dados-da-loja)
 
 ## License
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gsbenevides2/n8n-nodes-wake-commerce",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "n8n community node for Wake Commerce (formerly Tray Commerce) API integration",
 	"license": "MIT",
 	"homepage": "https://github.com/gsbenevides2/n8n-nodes-wake-commerce",
@@ -10,7 +10,9 @@
 		"wake-commerce",
 		"tray-commerce",
 		"ecommerce",
-		"products"
+		"products",
+		"hotsites",
+		"store"
 	],
 	"author": {
 		"name": "Guilherme da Silva Benevides",
