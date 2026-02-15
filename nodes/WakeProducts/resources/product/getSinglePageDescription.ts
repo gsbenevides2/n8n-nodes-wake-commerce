@@ -18,7 +18,7 @@ export const productGetSinglePageDescription: INodeProperties[] = [
 			maxValue: 50,
 		},
 		default: 50,
-		description: 'Number of products to return per page (max 50)',
+		description: 'Max number of results to return',
 	},
 	{
 		displayName: 'Page',

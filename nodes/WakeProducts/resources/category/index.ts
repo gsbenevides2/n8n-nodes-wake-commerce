@@ -16,10 +16,10 @@ export const categoryDescription: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get All',
+				name: 'Get Many',
 				value: 'getAll',
-				action: 'Get all categories',
-				description: 'Get all categories from Wake Commerce',
+				action: 'Get many categories',
+				description: 'Get many categories from Wake Commerce',
 				routing: {
 					request: {
 						method: 'GET',
